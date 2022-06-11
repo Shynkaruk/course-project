@@ -115,3 +115,66 @@ void Printer(Data* d, int n)
 		cout << "###########################################################" << endl;
 	}
 }
+
+void Change(Data* d, int n)
+{
+	// Тимчасовы перемінні
+	Company company; /* Тимчасові переменні - ми під них виділяємо память під час виклмку функції */
+	Director director;
+	Place place;
+	Reg reg;
+	Capital capital;
+	Category cat;
+	int num;
+	int changecat; 
+
+	cout << "Введіть номер компанії (від 1 до " << n <<  "): ";
+	cin >> num;
+	num--;
+
+	if (num >= 0 && num < n)
+	{
+		cout << "Виберіть категорію компанії :";
+		cout << "[1] - Юридичні послуги, [2] - Бугалтерія, [3] - Розважальна." << endl;
+		cin >> cat.category;
+		switch (changecat) {
+		case 1:
+			cat.category = "Юридичні послуги";
+		case 2:
+			cat.category = "Бугалтерія";
+		case 3:
+			cat.category = "Розважальна";
+		}
+		cout << "Введіть нову назву компанії: " << company.title << endl;
+		cout << "Введіть новий номер телефону компанії" << company.phone_comp << endl;
+
+		cout << "Введіть новий ПІБ керуючого: " << endl;
+		cin >> director.name >> director.lastname >> director.surname;
+		cout << "Введіть новий номер телефону керуючого: ";
+		cin >> director.phone;
+
+		cout << "Введіть нове місце регестрації: " << endl;
+		cout << "Місто: ";
+		cin >> place.city;
+		cout << "Вулиця: ";
+		cin >> place.street;
+		cout << "Номер вулиці: ";
+		cin >> place.num_street;
+
+		cout << "Введіть нову дату регестрації: " << endl;
+		cout << "День";
+		cin >> reg.day;
+		cout << "Місяць:";
+		cin >> reg.month;
+		cout << "Рік: ";
+		cin >> reg.year;
+
+		cout << "Введіть новий початковий капітал компанії: ";
+		cin >> capital.start_capital;
+		cout << "Введіть новий прибуток за квартал: ";
+		cin >> capital.profit;
+
+		// введенення данних в елемент массива
+		d[num].DataEntry(company, director, place, cat, reg, capital);
+	}
+}

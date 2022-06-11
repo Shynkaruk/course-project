@@ -6,7 +6,7 @@ void Menu() // Початок меню, простий вивiд iнформацiї.
 	cout << "Меню:" << endl; 
 	cout << "[1] - Створити новий довiдник" << endl;
 	cout << "[2] - Вивести компанії з довідника" << endl;
-	cout << "[3] - Видалити довiдник" << endl;
+	cout << "[3] - Редагувати інформацію" << endl;
 	cout << "[4] - Добавити нову iнформацiю" << endl;
 	cout << "[5] - Зберiгти довiдник" << endl;
 	cout << "[0] - Вихiд" << endl;
@@ -57,6 +57,21 @@ void main() {
 			}
 			else
 				cout << "Данні пусті" << endl;
+
+			system("pause");
+			system("cls");
+			Menu();
+			break;
+
+		case 3:
+			system("cls");
+			if (size != 0)
+			{
+				Change(d, size);
+			}
+			else
+				cout << "Данні пусті" << endl;
+
 			system("pause");
 			system("cls");
 			Menu();
