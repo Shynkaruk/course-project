@@ -62,7 +62,7 @@ void Data::Printer()
 	cout << "Стартовий капітал: " << capital.start_capital << "$ " << "Прибуток в місяць: " << capital.profit << "$" << endl;
 }
 
-void Data::Datainput(Company _company, Director _director, Place _place, Category _cat, Reg _reg, Capital _capital)
+void Data::DataEntry(Company _company, Director _director, Place _place, Category _cat, Reg _reg, Capital _capital)
 {
 	company.title = _company.title;
 	company.phone_comp = _company.phone_comp;

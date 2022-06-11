@@ -55,7 +55,7 @@ using namespace std;
 		~Data(); // ƒеструктор
 
 		void Printer(); // вив≥д в консоль
-		void Datainput(Company _company, Director _director, Place _place, Category _cat, Reg _reg, Capital _capital); // вв≥д данних в консол≥
+		void DataEntry(Company _company, Director _director, Place _place, Category _cat, Reg _reg, Capital _capital); // вв≥д данних в консол≥
 
 		Company GetCompany() { return company; };
 		Director GetDirector() { return director; };
