@@ -8,7 +8,7 @@ void Menu() // Початок меню, простий вивiд iнформацiї.
 	cout << "[2] - Вивести компанії з довідника" << endl;
 	cout << "[3] - Редагувати інформацію" << endl;
 	cout << "[4] - Добавити нову iнформацiю" << endl;
-	cout << "[5] - Зберiгти довiдник" << endl;
+	cout << "[5] - Видалити інформацію" << endl;
 	cout << "[0] - Вихiд" << endl;
 	cout << "Виберiть дiю: ";
 	cin >> changefun;
@@ -68,6 +68,33 @@ void main() {
 			if (size != 0)
 			{
 				Change(d, size);
+			}
+			else
+				cout << "Данні пусті" << endl;
+
+			system("pause");
+			system("cls");
+			Menu();
+			break;
+
+		case 4:
+			system("cls");
+			if (size != 0)
+			{
+				AddData(d, size);
+			}
+			else
+				cout << "Данні пусті" << endl;
+
+			system("pause");
+			system("cls");
+			Menu();
+			break;
+		case 5:
+			system("cls");
+			if (size != 0)
+			{
+				Delete(d, size);
 			}
 			else
 				cout << "Данні пусті" << endl;

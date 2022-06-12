@@ -4,5 +4,6 @@
 	void DataRead(Data* (&d), int& n, string file); // читання данних з файлу
 	void Printer(Data* d, int n); // виведення данних в консоль
 	void Change(Data* d, int n); // зміна данних
-	void AddData(); // додавання данних 
-	void DeleteData(); // видалення данних
+	void AddData(Data*& d, int& n); // додавання данних 
+	void Delete(Data* &d, int &n); // видалення данних
+	void Copy(Data* per, Data* per_0, int n);
