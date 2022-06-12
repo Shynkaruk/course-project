@@ -2,7 +2,7 @@
 
 void DataEntry(Data* &d, int& n)
 {
-	// тимчасові переменні
+	// тимчасовi переменнi
 	Company company;
 	Director director;
 	Place place;
@@ -12,50 +12,50 @@ void DataEntry(Data* &d, int& n)
 
 	int changecat;
 
-	cout << "Введіть скільки шаблонів ви хочете добавити: ";
+	cout << "Введiть скiльки шаблонiв ви хочете добавити: ";
 	cin >> n;
 
-	d = new Data[n]; // виділення памяті для массива данних
+	d = new Data[n]; // видiлення памятi для массива данних
 
 	for (int i = 0; i < n; i++) {
-		cout << "Виберіть категорію компанії :";
-		cout << "[1] - Юридичні послуги, [2] - Бугалтерія, [3] - Розважальна." << endl;
-		cin >> cat.category;
+		cout << "Виберiть категорiю компанiї :";
+		cout << "[1] - Юридичнi послуги, [2] - Бугалтерiя, [3] - Розважальна." << endl;
+		cin >> changecat;
 		switch (changecat) {
 		case 1:
-			cat.category = "Юридичні послуги";
+			cat.category = "Юридичнi послуги";
 		case 2: 
-			cat.category = "Бугалтерія";
+			cat.category = "Бугалтерiя";
 		case 3: 
 			cat.category = "Розважальна";
 		}
-		cout << "Введіть назву компанії: " << company.title << endl;
-		cout << "Введіть номер телефону компанії" << company.phone_comp << endl;
+		cout << "Введiть назву компанiї: " << company.title << endl;
+		cout << "Введiть номер телефону компанiї" << company.phone_comp << endl;
 
-		cout << "Введіть ПІБ керуючого: " << endl;
+		cout << "Введiть ПiБ керуючого: " << endl;
 		cin >> director.name >>  director.lastname >> director.surname;
-		cout << "Введіть номер телефону керуючого: ";
+		cout << "Введiть номер телефону керуючого: ";
 		cin >> director.phone;
 
-		cout << "Введіть місце регестрації: " << endl;
-		cout << "Місто: ";
+		cout << "Введiть мiсце регестрацiї: " << endl;
+		cout << "Мiсто: ";
 		cin >> place.city;
 		cout << "Вулиця: ";
 		cin >> place.street;
-		cout << "Номер вулиці: ";
+		cout << "Номер вулицi: ";
 		cin >> place.num_street;
 
-		cout << "Введіть дату регестрації: " << endl;
+		cout << "Введiть дату регестрацiї: " << endl;
 		cout << "День";
 		cin >> reg.day;
-		cout << "Місяць:";
+		cout << "Мiсяць:";
 		cin >> reg.month;
-		cout << "Рік: ";
+		cout << "Рiк: ";
 		cin >> reg.year;
 
-		cout << "Введіть початковий капітал компанії: ";
+		cout << "Введiть початковий капiтал компанiї: ";
 		cin >> capital.start_capital;
-		cout << "Введіть прибуток за квартал: ";
+		cout << "Введiть прибуток за квартал: ";
 		cin >> capital.profit;
 
 		// введенення данних в елемент массива
@@ -70,15 +70,15 @@ void DataRead(Data* (&d), int& n, string file)
 	ifstream reading(file);
 
 	if (reading) {
-		// Тимчасовы перемінні
-		Company company; /* Тимчасові переменні - ми під них виділяємо память під час виклмку функції */
+		// Тимчасовы перемiннi
+		Company company; /* Тимчасовi переменнi - ми пiд них видiляємо память пiд час виклмку функцiї */
 		Director director;
 		Place place;
 		Reg reg;
 		Capital capital;
 		Category cat;
 
-		reading >> n; // кількість перемінних
+		reading >> n; // кiлькiсть перемiнних
 
 		d = new Data[n];
 		for (int i = 0; i < n; i++)
@@ -110,7 +110,7 @@ void DataRead(Data* (&d), int& n, string file)
 void Printer(Data* d, int n)
 {
 	for (int i = 0; i < n; i++) {
-		cout << "Компанія №" << i + 1 << endl;
+		cout << "Компанiя №" << i + 1 << endl;
 		d[i].Printer();
 		cout << "###########################################################" << endl;
 	}
@@ -118,8 +118,8 @@ void Printer(Data* d, int n)
 
 void Change(Data* d, int n)
 {
-	// Тимчасовы перемінні
-	Company company; /* Тимчасові переменні - ми під них виділяємо память під час виклмку функції */
+	// Тимчасовы перемiннi
+	Company company; /* Тимчасовi переменнi - ми пiд них видiляємо память пiд час виклмку функцiї */
 	Director director;
 	Place place;
 	Reg reg;
@@ -128,50 +128,50 @@ void Change(Data* d, int n)
 	int num;
 	int changecat; 
 
-	cout << "Введіть номер компанії (від 1 до " << n <<  "): ";
+	cout << "Введiть номер компанiї (вiд 1 до " << n <<  "): ";
 	cin >> num;
 	num--;
 
 	if (num >= 0 && num < n)
 	{
-		cout << "Виберіть категорію компанії :";
-		cout << "[1] - Юридичні послуги, [2] - Бугалтерія, [3] - Розважальна." << endl;
-		cin >> cat.category;
+		cout << "Виберiть категорiю компанiї :";
+		cout << "[1] - Юридичнi послуги, [2] - Бугалтерiя, [3] - Розважальна." << endl;
+		cin >> changecat;
 		switch (changecat) {
 		case 1:
-			cat.category = "Юридичні послуги";
+			cat.category = "Юридичнi послуги";
 		case 2:
-			cat.category = "Бугалтерія";
+			cat.category = "Бугалтерiя";
 		case 3:
 			cat.category = "Розважальна";
 		}
-		cout << "Введіть нову назву компанії: " << company.title << endl;
-		cout << "Введіть новий номер телефону компанії" << company.phone_comp << endl;
+		cout << "Введiть нову назву компанiї: " << company.title << endl;
+		cout << "Введiть новий номер телефону компанiї" << company.phone_comp << endl;
 
-		cout << "Введіть новий ПІБ керуючого: " << endl;
+		cout << "Введiть новий ПiБ керуючого: " << endl;
 		cin >> director.name >> director.lastname >> director.surname;
-		cout << "Введіть новий номер телефону керуючого: ";
+		cout << "Введiть новий номер телефону керуючого: ";
 		cin >> director.phone;
 
-		cout << "Введіть нове місце регестрації: " << endl;
-		cout << "Місто: ";
+		cout << "Введiть нове мiсце регестрацiї: " << endl;
+		cout << "Мiсто: ";
 		cin >> place.city;
 		cout << "Вулиця: ";
 		cin >> place.street;
-		cout << "Номер вулиці: ";
+		cout << "Номер вулицi: ";
 		cin >> place.num_street;
 
-		cout << "Введіть нову дату регестрації: " << endl;
+		cout << "Введiть нову дату регестрацiї: " << endl;
 		cout << "День";
 		cin >> reg.day;
-		cout << "Місяць:";
+		cout << "Мiсяць:";
 		cin >> reg.month;
-		cout << "Рік: ";
+		cout << "Рiк: ";
 		cin >> reg.year;
 
-		cout << "Введіть новий початковий капітал компанії: ";
+		cout << "Введiть новий початковий капiтал компанiї: ";
 		cin >> capital.start_capital;
-		cout << "Введіть новий прибуток за квартал: ";
+		cout << "Введiть новий прибуток за квартал: ";
 		cin >> capital.profit;
 
 		// введенення данних в елемент массива
@@ -188,7 +188,7 @@ void Copy(Data* per, Data* per_0, int n)  // per - пустий массив. per_0 - массив
 
 void SearchData(Data*& d, int& n)
 {
-	Company company; /* Тимчасові переменні - ми під них виділяємо память під час виклмку функції */
+	Company company; /* Тимчасовi переменнi - ми пiд них видiляємо память пiд час виклмку функцiї */
 	Director director;
 	Place place;
 	Reg reg;
@@ -197,14 +197,14 @@ void SearchData(Data*& d, int& n)
 	int num;
 	int changecat;
 
-	cout << "Введіть номер компанії (від 1 до " << n << "): ";
+	cout << "Введiть номер компанiї (вiд 1 до " << n << "): ";
 	cin >> num;
 	num--;
 
 	for (int i = 0; i < n; i++) {
 		if (num >= 0 && num < n)
 		{
-			cout << "Компанія №" << i + 1 << endl;
+			cout << "Компанiя №" << i + 1 << endl;
 			d[i].Printer();
 			cout << "###########################################################" << endl;
 		}
@@ -255,53 +255,53 @@ void AddData(Data*& d, int& n)
 	Category cat;
 
 	int changecat;
-	Data* buffer = new Data[n]; // Тимчасовий массив яким ми будемо користуватися для запису нової інформації
+	Data* buffer = new Data[n]; // Тимчасовий массив яким ми будемо користуватися для запису нової iнформацiї
 	int s = n, new_size = ++n;
 
-	Copy(buffer, d, s); // Данні ми зберігаємо в буффер з розміром - s.
+	Copy(buffer, d, s); // Даннi ми зберiгаємо в буффер з розмiром - s.
 
-	d = new Data[new_size]; // виділяємо память на одиницю більше
+	d = new Data[new_size]; // видiляємо память на одиницю бiльше
 
-	Copy(d, buffer, s); // з буферу ми зберігаємо данні в динамічний массив
+	Copy(d, buffer, s); // з буферу ми зберiгаємо даннi в динамiчний массив
 
-	cout << "Виберіть категорію компанії :";
-	cout << "[1] - Юридичні послуги, [2] - Бугалтерія, [3] - Розважальна." << endl;
-	cin >> cat.category;
+	cout << "Виберiть категорiю компанiї :";
+	cout << "[1] - Юридичнi послуги, [2] - Бугалтерiя, [3] - Розважальна." << endl;
+	cin >> changecat;
 	switch (changecat) {
 	case 1:
-		cat.category = "Юридичні послуги";
+		cat.category = "Юридичнi послуги";
 	case 2:
-		cat.category = "Бугалтерія";
+		cat.category = "Бугалтерiя";
 	case 3:
 		cat.category = "Розважальна";
 	}
-	cout << "Введіть нову назву компанії: " << company.title << endl;
-	cout << "Введіть новий номер телефону компанії" << company.phone_comp << endl;
+	cout << "Введiть нову назву компанiї: " << company.title << endl;
+	cout << "Введiть новий номер телефону компанiї" << company.phone_comp << endl;
 
-	cout << "Введіть новий ПІБ керуючого: " << endl;
+	cout << "Введiть новий ПiБ керуючого: " << endl;
 	cin >> director.name >> director.lastname >> director.surname;
-	cout << "Введіть новий номер телефону керуючого: ";
+	cout << "Введiть новий номер телефону керуючого: ";
 	cin >> director.phone;
 
-	cout << "Введіть нове місце регестрації: " << endl;
-	cout << "Місто: ";
+	cout << "Введiть нове мiсце регестрацiї: " << endl;
+	cout << "Мiсто: ";
 	cin >> place.city;
 	cout << "Вулиця: ";
 	cin >> place.street;
-	cout << "Номер вулиці: ";
+	cout << "Номер вулицi: ";
 	cin >> place.num_street;
 
-	cout << "Введіть нову дату регестрації: " << endl;
+	cout << "Введiть нову дату регестрацiї: " << endl;
 	cout << "День";
 	cin >> reg.day;
-	cout << "Місяць:";
+	cout << "Мiсяць:";
 	cin >> reg.month;
-	cout << "Рік: ";
+	cout << "Рiк: ";
 	cin >> reg.year;
 
-	cout << "Введіть новий початковий капітал компанії: ";
+	cout << "Введiть новий початковий капiтал компанiї: ";
 	cin >> capital.start_capital;
-	cout << "Введіть новий прибуток за квартал: ";
+	cout << "Введiть новий прибуток за квартал: ";
 	cin >> capital.profit;
 
 	// введенення данних в елемент массива з новим розмыром массива
@@ -315,7 +315,7 @@ void Delete(Data*& d, int& n)
 	Data* buffer = new Data[n];
 	int changecat;
 
-	cout << "Введіть номер компанії (від 1 до " << n << "): ";
+	cout << "Введiть номер компанiї (вiд 1 до " << n << "): ";
 	cin >> num;
 	num--;
 	if (num >= 0 && num < n) {
@@ -326,14 +326,14 @@ void Delete(Data*& d, int& n)
 		d = new Data[n]; // створюємо пустий массив
 		for (int i = 0; i < n; i++) {
 			if (i != num) {
-				d[r] = buffer[i]; // елементи які нам не потрібні ми зберігаємо в буффер і таким чином перезаписуємо данні
-				r++; // бігаємо по массиву d;
+				d[r] = buffer[i]; // елементи якi нам не потрiбнi ми зберiгаємо в буффер i таким чином перезаписуємо даннi
+				r++; // бiгаємо по массиву d;
 			}
 		}
-		cout << "Компанія зі списку видалена" << endl;
+		cout << "Компанiя зi списку видалена" << endl;
 	}
 	else
-		cout << "Такоъ компанії по номеру не існує" << endl;
+		cout << "Такоъ компанiї по номеру не iснує" << endl;
 	delete[]buffer;
 
 }

@@ -50,12 +50,12 @@ using namespace std;
 		Category cat;
 		// Обєкти данних
 	public:
-		Data(); // конструктор по замовчуванні
+		Data(); // конструктор по замовчуваннi
 		Data(Company _company, Director _director, Place _place, Category _cat, Reg _reg, Capital _capital); // Конструктор з параметрами
 		~Data(); // Деструктор
 
-		void Printer(); // вивід в консоль
-		void DataEntry(Company _company, Director _director, Place _place, Category _cat, Reg _reg, Capital _capital); // ввід данних в консолі
+		void Printer(); // вивiд в консоль
+		void DataEntry(Company _company, Director _director, Place _place, Category _cat, Reg _reg, Capital _capital); // ввiд данних в консолi
 
 		Company GetCompany() { return company; };
 		Director GetDirector() { return director; };

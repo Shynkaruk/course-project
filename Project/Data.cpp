@@ -5,13 +5,13 @@ Data::Data()
 	company.title = "";
 	company.phone_comp = 0;
 
-	director.name = ""; // імя
-	director.lastname = ""; // призвіще
-	director.surname = ""; // по-батькові
+	director.name = ""; // iмя
+	director.lastname = ""; // призвiще
+	director.surname = ""; // по-батьковi
 
-	place.city = ""; // місто
+	place.city = ""; // мiсто
 	place.street = ""; // вулиця
-	place.num_street = 0; // номер вулиці
+	place.num_street = 0; // номер вулицi
 
 	cat.category = "";
 
@@ -54,12 +54,12 @@ Data::~Data()
 
 void Data::Printer()
 {
-	cout << "Компанія: " << company.title << "Телефон: " << company.title << endl;
+	cout << "Компанiя: " << company.title << "Телефон: " << company.title << endl;
 	cout << "Керуючий: " << director.name << " " << director.lastname << " " << director.surname << endl;
 	cout << "Номер телефону керуючого: " << director.phone << endl;
-	cout << "Місце регестрації: " << place.city << "," << place.street << "," << place.num_street;
-	cout << "Дата регестрації: " << reg.day << "." << reg.month << "." << reg.year << endl;
-	cout << "Стартовий капітал: " << capital.start_capital << "$ " << "Прибуток в місяць: " << capital.profit << "$" << endl;
+	cout << "Мiсце регестрацiї: " << place.city << "," << place.street << "," << place.num_street;
+	cout << "Дата регестрацiї: " << reg.day << "." << reg.month << "." << reg.year << endl;
+	cout << "Стартовий капiтал: " << capital.start_capital << "$ " << "Прибуток в мiсяць: " << capital.profit << "$" << endl;
 }
 
 void Data::DataEntry(Company _company, Director _director, Place _place, Category _cat, Reg _reg, Capital _capital)

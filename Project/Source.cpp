@@ -5,35 +5,35 @@ void Menu() // Початок меню, простий вивiд iнформацiї.
 {
 	cout << "Меню:" << endl; 
 	cout << "[1] - Створити новий довiдник" << endl;
-	cout << "[2] - Вивести компанії з довідника" << endl;
-	cout << "[3] - Редагувати інформацію" << endl;
+	cout << "[2] - Вивести компанiї з довiдника" << endl;
+	cout << "[3] - Редагувати iнформацiю" << endl;
 	cout << "[4] - Добавити нову iнформацiю" << endl;
-	cout << "[5] - Видалити інформацію" << endl;
-	cout << "[6] - Пошук інформації" << endl;
-	cout << "[7] - Зберегти інформацію" << endl;
+	cout << "[5] - Видалити iнформацiю" << endl;
+	cout << "[6] - Пошук iнформацiї" << endl;
+	cout << "[7] - Зберегти iнформацiю" << endl;
 	cout << "[0] - Вихiд" << endl;
 	cout << "Виберiть дiю: ";
 	cin >> changefun;
 }
 
-void main() {
+int main() {
 	setlocale(LC_ALL, "Russian");
 
 	Menu();
 
-	int size = 0; // розмір данних
+	int size = 0; // розмiр данних
 
 	int change;
 	string file;
 
-	Data* d = new Data[size]; // Data вказує на массив данних і передає данні іншому масиву данних
+	Data* d = new Data[size]; // Data вказує на массив данних i передає даннi iншому масиву данних
 
 	while (changefun !=0)
 	{
 		switch (changefun) {
 		case 1:
 			system("cls");
-			cout << "[1] - Заповнити самостійно " << endl;
+			cout << "[1] - Заповнити самостiйно " << endl;
 			cout << "[2] - Прочитати з файлу" << endl;
 			cin >> change;
 
@@ -42,7 +42,7 @@ void main() {
 			}
 			else
 			{
-				cout << "Введіть назву файлу: ";
+				cout << "Введiть назву файлу: ";
 				cin >> file;
 
 				DataRead(d, size, file);
@@ -58,7 +58,7 @@ void main() {
 				Printer(d, size);
 			}
 			else
-				cout << "Данні пусті" << endl;
+				cout << "Даннi пустi" << endl;
 
 			system("pause");
 			system("cls");
@@ -72,7 +72,7 @@ void main() {
 				Change(d, size);
 			}
 			else
-				cout << "Данні пусті" << endl;
+				cout << "Даннi пустi" << endl;
 
 			system("pause");
 			system("cls");
@@ -86,7 +86,7 @@ void main() {
 				AddData(d, size);
 			}
 			else
-				cout << "Данні пусті" << endl;
+				cout << "Даннi пустi" << endl;
 
 			system("pause");
 			system("cls");
@@ -99,7 +99,7 @@ void main() {
 				Delete(d, size);
 			}
 			else
-				cout << "Данні пусті" << endl;
+				cout << "Даннi пустi" << endl;
 
 			system("pause");
 			system("cls");
@@ -112,7 +112,7 @@ void main() {
 				SearchData(d, size);
 			}
 			else
-				cout << "Данні пусті" << endl;
+				cout << "Даннi пустi" << endl;
 
 			system("pause");
 			system("cls");
@@ -123,20 +123,20 @@ void main() {
 
 			if (size != 0)
 			{
-				cout << "Введіть назву файлу: ";
+				cout << "Введiть назву файлу: ";
 				cin >> file;
 
 				Save(d, size, file);
 			}
 			else
-				cout << "Данні пусті" << endl;
+				cout << "Даннi пустi" << endl;
 
 			system("pause");
 			system("cls");
 			Menu();
 			break;
 		default:
-			cout << "Такого пунка не існує!" << endl;
+			cout << "Такого пунка не iснує!" << endl;
 			system("pause");
 			system("cls");
 			Menu();
