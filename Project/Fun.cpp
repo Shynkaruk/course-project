@@ -186,6 +186,65 @@ void Copy(Data* per, Data* per_0, int n)  // per - пустий массив. per_0 - массив
 	}
 }
 
+void SearchData(Data*& d, int& n)
+{
+	Company company; /* Тимчасові переменні - ми під них виділяємо память під час виклмку функції */
+	Director director;
+	Place place;
+	Reg reg;
+	Capital capital;
+	Category cat;
+	int num;
+	int changecat;
+
+	cout << "Введіть номер компанії (від 1 до " << n << "): ";
+	cin >> num;
+	num--;
+
+	for (int i = 0; i < n; i++) {
+		if (num >= 0 && num < n)
+		{
+			cout << "Компанія №" << i + 1 << endl;
+			d[i].Printer();
+			cout << "###########################################################" << endl;
+		}
+	}
+}
+
+void Save(Data* d, int n, string file)
+{
+	ofstream record(file);
+
+	if (record) {
+		record << n << endl;
+
+		for (int i = 0; i < n; i++)
+		{
+			record << d[i].Cat().category;
+
+			record << d[i].GetCompany().title;
+			record << d[i].GetCompany().phone_comp;
+
+			record << d[i].GetDirector().lastname << d[i].GetDirector().name << d[i].GetDirector().surname;
+			record << d[i].GetDirector().phone;
+
+			record << d[i].GetPlace().city << d[i].GetPlace().street << d[i].GetPlace().num_street;
+			record << d[i].Reg_date().day << d[i].Reg_date().month << d[i].Reg_date().year;
+
+			record << d[i].Cap().start_capital;
+			record << d[i].Cap().profit;
+
+			if (i < n - 1)
+				record << endl;
+
+		}
+	}
+	else
+		cout << "Помилка збереження данних" << endl;
+
+	record.close();
+}
+
 void AddData(Data*& d, int& n)
 {
 	Company company;

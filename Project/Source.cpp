@@ -9,6 +9,8 @@ void Menu() // Початок меню, простий вивiд iнформацiї.
 	cout << "[3] - Редагувати інформацію" << endl;
 	cout << "[4] - Добавити нову iнформацiю" << endl;
 	cout << "[5] - Видалити інформацію" << endl;
+	cout << "[6] - Пошук інформації" << endl;
+	cout << "[7] - Зберегти інформацію" << endl;
 	cout << "[0] - Вихiд" << endl;
 	cout << "Виберiть дiю: ";
 	cin >> changefun;
@@ -103,6 +105,46 @@ void main() {
 			system("cls");
 			Menu();
 			break;
+		case 6:
+			system("cls");
+			if (size != 0)
+			{
+				SearchData(d, size);
+			}
+			else
+				cout << "Данні пусті" << endl;
+
+			system("pause");
+			system("cls");
+			Menu();
+			break;
+		case 7:
+			system("cls");
+
+			if (size != 0)
+			{
+				cout << "Введіть назву файлу: ";
+				cin >> file;
+
+				Save(d, size, file);
+			}
+			else
+				cout << "Данні пусті" << endl;
+
+			system("pause");
+			system("cls");
+			Menu();
+			break;
+		default:
+			cout << "Такого пунка не існує!" << endl;
+			system("pause");
+			system("cls");
+			Menu();
+			break;
 		}
 	}
+
+	system("cls");
+	cout << "Программа завершена" << endl;
+	system("pause");
 }

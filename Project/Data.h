@@ -62,5 +62,6 @@ using namespace std;
 		Place GetPlace() { return place; };
 		Reg Reg_date() { return reg; };
 		Capital Cap() { return capital; };
+		Category Cat() { return cat; }
 		Data& operator = (Data per);
 	};
